@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VOZ.EE Clone - Trang web đa tiện ích
 
-## Getting Started
+Một bản sao của trang web voz.ee được xây dựng bằng Next.js, cung cấp các tiện ích hữu ích như ghi chú, tạo mã QR và rút gọn link.
 
-First, run the development server:
+## ✨ Tính năng
 
+### 📝 Ghi chú
+- Tạo và lưu trữ ghi chú cá nhân
+- Lưu trữ local trong trình duyệt
+- Sao chép và tải xuống ghi chú
+- Quản lý danh sách ghi chú đã lưu
+
+### 📱 Tạo mã QR
+- Tạo mã QR từ văn bản hoặc URL
+- Tùy chỉnh kích thước và màu sắc
+- Tải xuống mã QR dưới dạng PNG
+- Sao chép mã QR vào clipboard
+
+### 🔗 Rút gọn link
+- Tạo link rút gọn từ URL dài
+- Tùy chỉnh mã rút gọn
+- Theo dõi số lượt click
+- Quản lý danh sách link đã tạo
+
+### 🌙 Dark/Light Mode
+- Chuyển đổi giữa chế độ sáng và tối
+- Lưu trữ preference trong localStorage
+- Responsive design cho mobile
+
+## 🚀 Cài đặt và chạy
+
+### Yêu cầu hệ thống
+- Node.js 18+
+- npm hoặc yarn
+
+### Cài đặt
 ```bash
+# Clone repository
+git clone <repository-url>
+cd vozee-clone
+
+# Cài đặt dependencies
+npm install
+
+# Chạy development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Mở [http://localhost:3000](http://localhost:3000) để xem trang web.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Công nghệ sử dụng
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js 15 với App Router
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **QR Code**: react-qr-code
+- **Language**: TypeScript
+- **Font**: Inter
 
-## Learn More
+## 📁 Cấu trúc dự án
 
-To learn more about Next.js, take a look at the following resources:
+```
+vozee-clone/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # Root layout
+│   │   ├── page.tsx            # Trang chủ
+│   │   ├── notes/
+│   │   │   └── page.tsx        # Trang ghi chú
+│   │   ├── qr-code/
+│   │   │   └── page.tsx        # Trang tạo QR
+│   │   └── short-link/
+│   │       └── page.tsx        # Trang rút gọn link
+│   └── components/
+│       ├── header.tsx          # Header component
+│       ├── feature-card.tsx    # Feature card component
+│       └── theme-provider.tsx  # Theme provider
+├── public/                     # Static assets
+└── tailwind.config.ts         # Tailwind configuration
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Tính năng nổi bật
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Responsive Design**: Tương thích với mọi kích thước màn hình
+- **Dark Mode**: Hỗ trợ chế độ tối với animation mượt mà
+- **Local Storage**: Lưu trữ dữ liệu local, không cần server
+- **Modern UI**: Thiết kế hiện đại với Tailwind CSS
+- **TypeScript**: Type safety cho code chất lượng cao
 
-## Deploy on Vercel
+## 📱 Screenshots
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Trang chủ
+- Hiển thị 3 tính năng chính với card design đẹp mắt
+- Header với navigation và toggle dark mode
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Trang ghi chú
+- Editor đơn giản với title và content
+- Danh sách ghi chú đã lưu với các action buttons
+
+### Trang QR Code
+- Form input với preview real-time
+- Tùy chỉnh màu sắc và kích thước
+- Download và copy functionality
+
+### Trang rút gọn link
+- Input URL với custom code option
+- Danh sách link đã tạo với click tracking
+- Copy và open link functionality
+
+## 🔧 Development
+
+```bash
+# Chạy development server
+npm run dev
+
+# Build production
+npm run build
+
+# Start production server
+npm start
+
+# Lint code
+npm run lint
+```
+
+## 📄 License
+
+MIT License - xem file LICENSE để biết thêm chi tiết.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.

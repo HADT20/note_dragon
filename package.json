@@ -4,24 +4,38 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:test": "node scripts/test-db-connection.js",
+    "db:init": "node scripts/init-planetscale.js",
+    "db:create-admin": "node scripts/create-admin.js",
+    "generate:jwt": "node scripts/generate-jwt-secret.js",
+    "pre-deploy": "node scripts/pre-deploy-check.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.545.0",
+    "mysql2": "^3.15.2",
+    "next": "15.5.4",
+    "qrcode": "^1.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "react-qr-code": "^2.0.18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
