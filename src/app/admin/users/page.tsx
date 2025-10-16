@@ -6,7 +6,7 @@ import Sidebar from '../../../components/sidebar';
 import TopBar from '../../../components/top-bar';
 import Toast from '../../../components/toast';
 import ConfirmDialog from '../../../components/confirm-dialog';
-import { Users, Shield, Trash2, Edit, Search, UserCheck, UserX } from 'lucide-react';
+import { Users, Shield, Trash2, Search, UserCheck, UserX } from 'lucide-react';
 
 interface User {
   id: number;

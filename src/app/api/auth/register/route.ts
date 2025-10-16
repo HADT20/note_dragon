@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import pool from '@/lib/db';
-import { RowDataPacket } from 'mysql2';
+import { RowDataPacket, ResultSetHeader } from 'mysql2';
 
 export async function POST(request: NextRequest) {
   try {
@@ -38,9 +38,9 @@ export async function POST(request: NextRequest) {
     );
 
     return NextResponse.json(
-      { 
+      {
         message: 'Đăng ký thành công!',
-        userId: (result as any).insertId
+        userId: (result as ResultSetHeader).insertId
       },
       { status: 201 }
     );

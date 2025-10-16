@@ -7,7 +7,7 @@ import FeatureBox from "../components/feature-box";
 import { Globe, Repeat } from "lucide-react";
 
 export default function Home() {
-  const [user, setUser] = useState<any>(null);
+  const [, setUser] = useState<{ username: string; role: string } | null>(null);
 
   useEffect(() => {
     // Lấy thông tin user từ localStorage

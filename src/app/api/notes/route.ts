@@ -14,9 +14,9 @@ function verifyToken(request: NextRequest) {
 
   const token = authHeader.substring(7);
   try {
-    const decoded = jwt.verify(token, JWT_SECRET) as any;
+    const decoded = jwt.verify(token, JWT_SECRET) as { userId: number };
     return decoded;
-  } catch (error) {
+  } catch {
     return null;
   }
 }

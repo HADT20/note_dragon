@@ -1,7 +1,7 @@
 import mysql from 'mysql2/promise';
 
 // Tạo connection pool với cấu hình linh hoạt
-const poolConfig: any = {
+const poolConfig: mysql.PoolOptions = {
   host: process.env.DB_HOST || 'localhost',
   port: parseInt(process.env.DB_PORT || '3306'),
   user: process.env.DB_USER || 'root',

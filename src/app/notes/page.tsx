@@ -21,7 +21,7 @@ export default function NotesPage() {
   const [showToast, setShowToast] = useState(false);
   const [toastType, setToastType] = useState<'success' | 'error' | 'warning'>('success');
   const [toastMessage, setToastMessage] = useState('');
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{ id: number; username: string } | null>(null);
 
   useEffect(() => {
     // Kiểm tra đăng nhập

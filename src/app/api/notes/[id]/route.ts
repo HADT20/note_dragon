@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/lib/db';
-import { RowDataPacket, ResultSetHeader } from 'mysql2';
+import { RowDataPacket } from 'mysql2';
 import jwt from 'jsonwebtoken';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
@@ -14,9 +14,9 @@ function verifyToken(request: NextRequest) {
 
   const token = authHeader.substring(7);
   try {
-    const decoded = jwt.verify(token, JWT_SECRET) as any;
+    const decoded = jwt.verify(token, JWT_SECRET) as { userId: number };
     return decoded;
-  } catch (error) {
+  } catch {
     return null;
   }
 }

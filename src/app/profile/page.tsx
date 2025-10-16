@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 
 export default function ProfilePage() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{ username: string; role: string; fullName?: string; email?: string } | null>(null);
   const [showToast, setShowToast] = useState(false);
   const [toastType, setToastType] = useState<'success' | 'error' | 'warning'>('success');
   const [toastMessage, setToastMessage] = useState('');
@@ -19,7 +19,7 @@ export default function ProfilePage() {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Kiểm tra đăng nhập

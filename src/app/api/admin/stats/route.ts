@@ -19,10 +19,10 @@ export async function GET(request: NextRequest) {
     const token = authHeader.substring(7);
 
     // Verify token
-    let decoded: any;
+    let decoded: { userId: number };
     try {
-      decoded = jwt.verify(token, JWT_SECRET);
-    } catch (error) {
+      decoded = jwt.verify(token, JWT_SECRET) as { userId: number };
+    } catch {
       return NextResponse.json(
         { error: 'Invalid token' },
         { status: 401 }

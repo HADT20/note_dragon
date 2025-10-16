@@ -13,7 +13,7 @@ export default function LoginPage() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [, setSuccess] = useState('');
   const [showToast, setShowToast] = useState(false);
   const [toastType, setToastType] = useState<'success' | 'error' | 'warning'>('success');
   const [toastMessage, setToastMessage] = useState('');

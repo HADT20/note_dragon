@@ -14,8 +14,8 @@ async function verifyAdmin(request: NextRequest) {
   const token = authHeader.substring(7);
 
   try {
-    const decoded: any = jwt.verify(token, JWT_SECRET);
-    
+    const decoded = jwt.verify(token, JWT_SECRET) as { userId: number };
+
     const [users] = await pool.query<RowDataPacket[]>(
       'SELECT role FROM users WHERE id = ?',
       [decoded.userId]
@@ -26,7 +26,7 @@ async function verifyAdmin(request: NextRequest) {
     }
 
     return decoded;
-  } catch (error) {
+  } catch {
     return null;
   }
 }

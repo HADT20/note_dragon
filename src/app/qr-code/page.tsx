@@ -3,14 +3,14 @@
 import { useState } from 'react';
 import Sidebar from '../../components/sidebar';
 import TopBar from '../../components/top-bar';
-import { Download, Copy } from 'lucide-react';
+import { Download } from 'lucide-react';
 import QRCode from 'react-qr-code';
 
 export default function QRCodePage() {
   const [text, setText] = useState('');
-  const [size, setSize] = useState(256);
-  const [bgColor, setBgColor] = useState('#ffffff');
-  const [fgColor, setFgColor] = useState('#000000');
+  const [, setSize] = useState(256);
+  const [, setBgColor] = useState('#ffffff');
+  const [, setFgColor] = useState('#000000');
   const [showDownloadMenu, setShowDownloadMenu] = useState(false);
 
   const downloadQR = () => {
@@ -38,7 +38,7 @@ export default function QRCodePage() {
     img.src = 'data:image/svg+xml;base64,' + btoa(svgData);
   };
 
-  const copyQRCode = async () => {
+  const _copyQRCode = async () => {
     const svg = document.getElementById('qr-code');
     if (!svg) return;
 

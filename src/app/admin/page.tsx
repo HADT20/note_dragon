@@ -16,7 +16,7 @@ interface Stats {
 
 export default function AdminPage() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{ username: string; role: string; fullName?: string } | null>(null);
   const [stats, setStats] = useState<Stats>({
     totalUsers: 0,
     totalLinks: 0,

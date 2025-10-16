@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function TopBar() {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{ username: string; role: string } | null>(null);
   const [showUserMenu, setShowUserMenu] = useState(false);
 
   useEffect(() => {
