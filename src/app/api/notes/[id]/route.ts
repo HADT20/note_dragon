@@ -24,8 +24,9 @@ function verifyToken(request: NextRequest) {
 // GET - Lấy note theo ID
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const params = await context.params;
   try {
     const user = verifyToken(request);
     if (!user) {
@@ -65,8 +66,9 @@ export async function GET(
 // PUT - Cập nhật note
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const params = await context.params;
   try {
     const user = verifyToken(request);
     if (!user) {
@@ -132,8 +134,9 @@ export async function PUT(
 // DELETE - Xóa note
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const params = await context.params;
   try {
     const user = verifyToken(request);
     if (!user) {

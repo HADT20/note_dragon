@@ -19,7 +19,7 @@ export default function ProfilePage() {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [, setIsLoading] = useState(false);
+  const [, _setIsLoading] = useState(false);
 
   useEffect(() => {
     // Kiểm tra đăng nhập

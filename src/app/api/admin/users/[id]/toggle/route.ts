@@ -33,8 +33,9 @@ async function verifyAdmin(request: NextRequest) {
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const params = await context.params;
   try {
     const admin = await verifyAdmin(request);
     if (!admin) {

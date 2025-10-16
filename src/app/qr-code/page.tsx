@@ -8,9 +8,9 @@ import QRCode from 'react-qr-code';
 
 export default function QRCodePage() {
   const [text, setText] = useState('');
-  const [, setSize] = useState(256);
-  const [, setBgColor] = useState('#ffffff');
-  const [, setFgColor] = useState('#000000');
+  const [, _setSize] = useState(256);
+  const [, _setBgColor] = useState('#ffffff');
+  const [, _setFgColor] = useState('#000000');
   const [showDownloadMenu, setShowDownloadMenu] = useState(false);
 
   const downloadQR = () => {
